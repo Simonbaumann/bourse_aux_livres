@@ -1,0 +1,13 @@
+
+
+
+/* FORM SIGN IN */
+.form-signin {
+	max-width: 400px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.form-signin-heading {
+	margin-bottom: 10px;
+}
