@@ -1,3 +1,3 @@
 <?php
-        header('Location: accueil');
+        header('Location: connexion');
 ?>

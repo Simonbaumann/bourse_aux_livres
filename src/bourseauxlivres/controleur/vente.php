@@ -26,5 +26,5 @@
 	$m_accueil = new m_accueil($base_de_donnee);
 	$accueil = $m_accueil->get_accueil();*/
 
-	$nom_page = 'Accueil';
+	$nom_page = 'Vente de livres';
 ?>

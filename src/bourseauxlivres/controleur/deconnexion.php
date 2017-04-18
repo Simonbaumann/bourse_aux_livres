@@ -22,7 +22,7 @@
 	/**** VERIF SESSION ****/
 	$c_session->session();
 
-    if($_SESSION['id'] == 0) header('Location: accueil');
+    if($_SESSION['id'] == 0) header('Location: connexion');
 
     $c_utilisateur->deconnexion();
 

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
     	<div class="page-header">
-		    <h1>Accueil</h1>
+		    <h1><?php echo $nom_page; ?></h1>
 		</div>
 		<p>
 			TODO <br >
