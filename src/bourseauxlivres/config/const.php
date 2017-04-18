@@ -18,10 +18,10 @@
 
 	/* BASE DE DONNEE */
 	define('CONST_DB_HOST', "localhost");
-	define('CONST_DB_PORT', "8098");
+	//define('CONST_DB_PORT', "8098");
 	define('CONST_DB_NAME', "bourseauxlivres");
 	define('CONST_DB_USER', "root");
-	define('CONST_DB_PASS', "");
+	define('CONST_DB_PASS', "root");
 	
 	/* PARAMETRES */
 	define('AFFICHER_ERREURS', true);
@@ -35,10 +35,13 @@
     define('NOM_PAGE_DEFAUT', '');
     define('DESCRIPTION_DEFAUT', '');
     define('KEYWORDS_DEFAUTS', '');
+    define('TITRE_DEFAUTS', 'Bourse aux livres');
 
     /* PATH  */
-    define('ADRESSE_ABSOLUE_URL', 'http://localhost:8098/bourseauxlivres/');
+    define('ADRESSE_ABSOLUE_URL', 'http://localhost/bourseauxlivres/');
 
+    define('BOOTSTRAP_CSS', ADRESSE_ABSOLUE_URL . 'vue/css/bootstrap.min.css');
+    define('BOOTSTRAP_JS', ADRESSE_ABSOLUE_URL . 'vue/js/bootstrap.min.js');
     define('STYLE_CSS', ADRESSE_ABSOLUE_URL . 'vue/css/style.css');
     define('IMAGES_STYLE', ADRESSE_ABSOLUE_URL .  'vue/images/');
 
