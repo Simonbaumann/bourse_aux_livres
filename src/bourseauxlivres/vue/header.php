@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<link rel="stylesheet" href="<?php echo BOOTSTRAP_CSS;?>">
 		<link rel="stylesheet" href="<?php echo STYLE_CSS;?>">
@@ -11,7 +11,7 @@
 		<meta name="keywords" content="<?php echo KEYWORDS_DEFAUTS; ?>">
 		<meta name="Author" content="Kristen VIGUIER et Simon BAUMANN" />
 
-		<title><?php TITRE_DEFAUTS ;?></title>
+		<title><?php TITRE_DEFAUTS; ?></title>
 	</head>
 	<body>
 
@@ -31,31 +31,33 @@
 				<!--  nav links, forms, et autre contenu pour le toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Accueil</a></li>
+						<li><a href="accueil">Accueil</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ouvrages<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Lister</a></li>
-								<li><a href="#">Ajouter</a></li>
-								<li><a href="#">Supprimer</a></li>
+								<li><a href="ouvrages">Lister</a></li>
+								<li><a href="ajouter_ouvrage">Ajouter</a></li>
+								<li><a href="supprimer_ouvrage">Supprimer</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adhérents<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Ajouter</a></li>
-								<li><a href="#">Lister</a></li>
-								<li><a href="#">Supprimer</a></li>
+								<li><a href="ajouter_adherent">Ajouter</a></li>
+								<li><a href="adherents">Lister</a></li>
+								<li><a href="supprimer_adherent">Supprimer</a></li>
 							</ul>
 						</li>
+						<li><a href="vente">Vente</a></li>
+						<li><a href="depot">Dépôt</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon compte<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Modifier</a></li>
+								<li><a href="mon_compte">Modifier</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="#">Déconnexion</a></li>
+								<li><a href="deconnexion">Déconnexion</a></li>
 							</ul>
 						</li>
 					</ul>

@@ -33,7 +33,7 @@
 
     /* CHAINES */
     define('NOM_PAGE_DEFAUT', '');
-    define('DESCRIPTION_DEFAUT', '');
+    define('DESCRIPTION_DEFAUT', 'Système informatique de l’association APERO (Association des Parents d’Elèves de Rodez-Onet) permettant aux familles d’assurer le dépôt et la vente de manuels scolaire de l’année écoulée.');
     define('KEYWORDS_DEFAUTS', '');
     define('TITRE_DEFAUTS', 'Bourse aux livres');
 

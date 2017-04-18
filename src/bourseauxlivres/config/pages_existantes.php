@@ -8,7 +8,9 @@
      */
 	
 	$pages_existantes = array(
-			'erreur', 'accueil', 'deconnexion'
+			'erreur', 'accueil', 'deconnexion', 'ouvrages', 'ouvrage', 'ajouter_ouvrage', 
+			'supprimer_ouvrage', 'adherents', 'adherent', 'ajouter_adherent', 'supprimer_adherent',
+			'depot', 'vente', 'connexion', 'deconnexion', 'mon_compte'
 		);
 	$web_services_existants = array(
 		);
