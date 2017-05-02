@@ -38,13 +38,13 @@
     define('TITRE_DEFAUTS', 'Bourse aux livres');
 
     /* PATH  */
-    define('ADRESSE_ABSOLUE_URL', 'http://localhost/bourseauxlivres/');
+    define('ADRESSE_ABSOLUE_URL', 'http://localhost:8098/bourseauxlivres/');
 
     define('BOOTSTRAP_CSS', ADRESSE_ABSOLUE_URL . 'vue/css/bootstrap.min.css');
     define('BOOTSTRAP_JS', ADRESSE_ABSOLUE_URL . 'vue/js/bootstrap.min.js');
     define('STYLE_CSS', ADRESSE_ABSOLUE_URL . 'vue/css/style.css');
     define('IMAGES_STYLE', ADRESSE_ABSOLUE_URL .  'vue/images/');
-    define('VENTE_JS', ADRESSE_ABSOLUE_URL . 'js/vente.js');
+    define('VENTE_JS', ADRESSE_ABSOLUE_URL . 'vue/js/vente.js');
     
     define('FAVICON', ADRESSE_ABSOLUE_URL . 'vue/images/favicon.ico');
 
