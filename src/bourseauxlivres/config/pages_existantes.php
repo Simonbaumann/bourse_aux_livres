@@ -10,7 +10,7 @@
 	$pages_existantes = array(
 			'erreur', 'accueil', 'deconnexion', 'ouvrages', 'ouvrage', 'ajouter_ouvrage', 
 			'supprimer_ouvrage', 'adherents', 'adherent', 'ajouter_adherent', 'supprimer_adherent',
-			'depot', 'vente', 'connexion', 'deconnexion', 'mon_compte'
+			'depot', 'vente', 'connexion', 'deconnexion', 'mon_compte', 'ajouter_utilisateur', 'utilisateurs', 'utilisateur', 'supprimer_utilisateur'
 		);
 	$web_services_existants = array(
 		);

@@ -9,7 +9,6 @@
 
 	/**** MODELE ****/
 	require_once('modele/m_session.php');
-	require_once('modele/m_accueil.php');
 	require_once('modele/m_utilisateur.php');
 
 	/**** OBJETS ****/

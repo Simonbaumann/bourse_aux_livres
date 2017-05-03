@@ -6,6 +6,7 @@
 	require_once('class/c_session.php');
 	require_once('class/t_texte.php');
 	require_once('class/c_utilisateur.php');
+	require_once('class/f_formulaire.php');
 
 	/**** MODELE ****/
 	require_once('modele/m_session.php');
@@ -13,17 +14,12 @@
 
 	/**** OBJETS ****/
 	$t_texte = new t_texte();
-	
+	$f_formulaire = new f_formulaire();
 	$m_session = new m_session($base_de_donnee);
-	/*$m_admin = new m_admin($base_de_donnee);
 	$c_session = new c_session($m_session, $t_texte);
-	$c_utilisateur = new c_utilisateur($m_admin);*/
+	$m_utilisateur = new m_utilisateur($base_de_donnee);
 
-	/**** VERIF SESSION ****/
-	/*$c_session->session();
+	$nom_page = 'Liste des utilisateurs';
 
-	$m_accueil = new m_accueil($base_de_donnee);
-	$accueil = $m_accueil->get_accueil();*/
-
-	$nom_page = 'Vente de livres';
+	$utilisateurs = $m_utilisateur->lister_comptes_utilisateurs();
 ?>

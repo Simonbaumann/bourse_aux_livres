@@ -50,6 +50,14 @@
 						</li>
 						<li><a href="vente">Vente</a></li>
 						<li><a href="depot">Dépôt</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Utilisateurs<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="ajouter_utilisateur">Ajouter</a></li>
+								<li><a href="utilisateurs">Lister</a></li>
+								<li><a href="supprimer_utilisateur">Supprimer</a></li>
+							</ul>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">

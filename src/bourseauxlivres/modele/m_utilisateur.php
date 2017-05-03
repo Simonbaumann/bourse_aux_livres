@@ -80,13 +80,14 @@
          * Params : adresse email, password et is_admin
          */
         public function creation_compte_utilisateur($adresse_email, $password, $is_admin){
-            $inscription = $this->base_de_donnee->prepare('INSERT INTO admin (adresse_email, password, is_admin) 
+            $inscription = $this->base_de_donnee->prepare('INSERT INTO utilisateur (adresse_email, password, is_admin) 
             values (?, ?, ?) ');
 
             $inscription->bindValue(1, $adresse_email, PDO::PARAM_STR);
             $inscription->bindValue(2, hash('sha256', $password), PDO::PARAM_STR);
-            $inscription->bindValue(3, $is_admin, PDO::PARAM_STR);
+            $inscription->bindValue(3, $is_admin, PDO::PARAM_BOOL);
             $inscription->execute();   
+            return $inscription;
         } 
 
         /*
@@ -98,11 +99,12 @@
 
             $lister_comptes_utilisateurs->execute();
             
-            $retour = $lister_comptes_utilisateurs->fetch(PDO::FETCH_OBJ);
+            $retour = $lister_comptes_utilisateurs->fetchAll(PDO::FETCH_OBJ);
             $lister_comptes_utilisateurs->closeCursor();
                 
             return $retour;
         } 
+
         /*
          *  Permet la suppression d'un compte d'utilisateur
          *  Params : id
@@ -111,6 +113,22 @@
             $supprimer_compte_utilisateurs = $this->base_de_donnee->prepare('DELETE FROM utilisateur WHERE id = ?');
             $supprimer_compte_utilisateurs->bindValue(1, $id, PDO::PARAM_INT);
             $supprimer_compte_utilisateurs->execute();
+        }
+
+        /*
+         *  Verification d'un compte existant
+         *  Params : adresse_email
+         */
+        public function is_compte_existant($adresse_email){
+            $is_compte_existant = $this->base_de_donnee->prepare('SELECT * FROM utilisateur WHERE adresse_email = ?');
+
+            $is_compte_existant->bindValue(1, $adresse_email, PDO::PARAM_STR);
+            $is_compte_existant->execute();
+            
+            $retour = $is_compte_existant->fetch(PDO::FETCH_OBJ);
+            $is_compte_existant->closeCursor();
+                
+            return $retour;
         }
 	}
 ?>
