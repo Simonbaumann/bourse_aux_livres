@@ -12,7 +12,7 @@
 	require_once('modele/m_session.php');
 	require_once('modele/m_admin.php');
 	require_once('modele/m_slider.php');
-	require_once('modele/m_galerie.php');
+	require_once('modele/m_utilisateur.php');
 
 	/**** OBJETS ****/
 	$t_texte = new t_texte();

@@ -12,7 +12,7 @@
 		/**** MODELE ****/
 		require_once('modele/m_admin.php');
 		require_once('modele/m_slider.php');
-		require_once('modele/m_galerie.php');
+		require_once('modele/m_utilisateur.php');
 
 		/**** OBJETS ****/
 		$m_galerie = new m_galerie($base_de_donnee);

@@ -10,7 +10,7 @@
 
 	/**** MODELE ****/
 	require_once('modele/m_session.php');
-	require_once('modele/m_admin.php');
+	require_once('modele/m_utilisateur.php');
 	require_once('modele/m_slider.php');
 
 	/**** OBJETS ****/
