@@ -7,29 +7,20 @@
 			$this->modele = $p_modele;
 		}
 		
-        public function connexion($compte, $password, $retenir) {
-			if(!empty($compte) AND !empty($password)) {
-				$verification = $this->modele->connexion($compte, $password);
+        public function connexion($adresse_email, $password) {
+			if(!empty($adresse_email) AND !empty($password)) {
+				$verification = $this->modele->connexion($adresse_email, $password);
+				var_dump($verification);
 				if(!empty($verification)){
 					$_SESSION['id'] = $verification->id;
 					$_SESSION['time'] = time();
-					return 0;
+					$_SESSION['email'] = $verification->adresse_email;
+					$_SESSION['is_admin'] = $verification->is_admin;
+					return 7;
 				}else{
-					return 2;
+					return 8;
 				}
-				/*if(!empty($verification)) {
-                    $code_activation = $verification->code_activation;
-                    
-					if($code_activation == 0) {
-						$_SESSION['id'] = $verification->id;
-
-						if($retenir == 1) {
-							Setcookie("u", $verification->id, time() + TIMEOUT_CONNEXION);
-							Setcookie("p", hash('sha256', $password),time()+2592000);
-						}
-					} else { return 3; }
-				} else { return 2; }*/
-			} else { return 1; }
+			} else { return 9; }
 		}
         
         public function deconnexion() {

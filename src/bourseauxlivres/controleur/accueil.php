@@ -15,15 +15,12 @@
 	$t_texte = new t_texte();
 	
 	$m_session = new m_session($base_de_donnee);
-	/*$m_admin = new m_admin($base_de_donnee);
+	$m_utilisateur = new m_utilisateur($base_de_donnee);
 	$c_session = new c_session($m_session, $t_texte);
-	$c_utilisateur = new c_utilisateur($m_admin);*/
+	$c_utilisateur = new c_utilisateur($m_utilisateur);
 
 	/**** VERIF SESSION ****/
-	/*$c_session->session();
-
-	$m_accueil = new m_accueil($base_de_donnee);
-	$accueil = $m_accueil->get_accueil();*/
-
+    if($_SESSION['id'] == -1) header('Location: connexion');
+    
 	$nom_page = 'Accueil';
 ?>

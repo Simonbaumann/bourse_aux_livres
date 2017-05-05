@@ -57,8 +57,22 @@
             $mise_a_jour_compte->bindValue(3, $is_admin, PDO::PARAM_BOOL);
             $mise_a_jour_compte->bindValue(4, $id, PDO::PARAM_INT);
             $mise_a_jour_compte->execute();
+            return $mise_a_jour_compte;
         }
-        
+
+        /*
+         * Mis à jour des droits de l'utilisateur
+         * Params : id, is_admin
+         */
+        public function mise_droit_utilisateur($id, $is_admin){
+            $mise_droit_utilisateur = $this->base_de_donnee->prepare('UPDATE utilisateur SET  is_admin = ? WHERE id = ?');
+            
+            $mise_droit_utilisateur->bindValue(1, $is_admin, PDO::PARAM_BOOL);
+            $mise_droit_utilisateur->bindValue(2, $id, PDO::PARAM_INT);
+            $mise_droit_utilisateur->execute();
+            return $mise_droit_utilisateur;
+        }
+
         /*
          * Obtenir information utilisateur
          * Params : id
@@ -113,6 +127,7 @@
             $supprimer_compte_utilisateurs = $this->base_de_donnee->prepare('DELETE FROM utilisateur WHERE id = ?');
             $supprimer_compte_utilisateurs->bindValue(1, $id, PDO::PARAM_INT);
             $supprimer_compte_utilisateurs->execute();
+            return $supprimer_compte_utilisateurs;
         }
 
         /*

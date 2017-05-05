@@ -14,7 +14,9 @@
 		<title><?php TITRE_DEFAUTS; ?></title>
 	</head>
 	<body>
-
+	<?php
+		if(isset($_SESSION) && $_SESSION['id'] != -1) {
+	?>
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<!-- Pour l'affichage mobile -->
@@ -31,44 +33,50 @@
 				<!--  nav links, forms, et autre contenu pour le toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="accueil">Accueil</a></li>
+						<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'accueil'; ?>">Accueil</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ouvrages<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="ouvrages">Lister</a></li>
-								<li><a href="ajouter_ouvrage">Ajouter</a></li>
-								<li><a href="supprimer_ouvrage">Supprimer</a></li>
+								<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'ouvrages'; ?>">Lister</a></li>
+								<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'ajouter_ouvrage'; ?>">Ajouter</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adhérents<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="ajouter_adherent">Ajouter</a></li>
-								<li><a href="adherents">Lister</a></li>
-								<li><a href="supprimer_adherent">Supprimer</a></li>
+								<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'ajouter_adherent'; ?>">Ajouter</a></li>
+								<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'adherents'; ?>">Lister</a></li>
 							</ul>
 						</li>
-						<li><a href="vente">Vente</a></li>
-						<li><a href="depot">Dépôt</a></li>
+						<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'vente'; ?>">Vente</a></li>
+						<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'depot'; ?>">Dépôt</a></li>
+					<?php 
+						if($_SESSION['is_admin'] == 1){
+					?>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Utilisateurs<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="ajouter_utilisateur">Ajouter</a></li>
-								<li><a href="utilisateurs">Lister</a></li>
-								<li><a href="supprimer_utilisateur">Supprimer</a></li>
+								<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'ajouter_utilisateur'; ?>">Ajouter</a></li>
+								<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'utilisateurs'; ?>">Lister</a></li>
 							</ul>
 						</li>
+					<?php
+						}
+					?>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon compte<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="mon_compte">Modifier</a></li>
+								<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'mon_compte'; ?>">Modifier</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="deconnexion">Déconnexion</a></li>
+								<li><a href="<?php echo ADRESSE_ABSOLUE_URL . 'deconnexion'; ?>">Déconnexion</a></li>
 							</ul>
 						</li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
+	<?php
+		}
+	?>

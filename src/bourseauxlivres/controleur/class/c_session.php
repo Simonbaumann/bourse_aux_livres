@@ -12,10 +12,7 @@
         /* Vérifie la variable de session id */
 		public function session(){
 			if(!isset($_SESSION['id'])){
-				$_SESSION['id'] = 0;
-				$id = 0;
-			} else {
-				$id = $_SESSION['id'];
+				$_SESSION['id'] = -1;
 			}
             if(!isset($_SESSION['token'])){
                 $_SESSION['token'] = uniqid(rand(), true); //On génére un jeton totalement unique (c'est capital :D)
