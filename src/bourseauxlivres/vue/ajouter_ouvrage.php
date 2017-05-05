@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label for="type">Type</label>
-                <select name="classe" class="form-control">
+                <select name="type" class="form-control">
                     <option value="1">Mathématiques</option>
                     <option value="2">Français</option>
                     <option value="3">Philosophie</option>
@@ -22,7 +22,7 @@
                     <option value="5">Chimie</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="classe">
                 <label for="editeur">Classe</label>
                 <select name="classe" class="form-control">
                     <option value="1">Seconde</option>
@@ -30,7 +30,7 @@
                     <option value="3">Terminale</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group" id ="section">
                 <label for="editeur">Section</label>
                 <select name="section" class="form-control">
                     <option value="1">S</option>
@@ -44,3 +44,10 @@
         </form>
     </div>
 </div> <!-- /container -->
+
+<script type="text/javascript">
+    var classe = document.getElementById('classe');
+    if (classe.value == 'Seconde') {
+        alert('ok');
+    }
+</script>

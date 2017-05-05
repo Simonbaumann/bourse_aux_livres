@@ -23,9 +23,9 @@
             $ajouter_ouvrage->bindValue(1, $nom, PDO::PARAM_STR);
             $ajouter_ouvrage->bindValue(2, $type, PDO::PARAM_STR);
             $ajouter_ouvrage->bindValue(3, $editeur, PDO::PARAM_STR);
-            $ajouter_ouvrage->bindValue(3, $classe, PDO::PARAM_INT);
-            $ajouter_ouvrage->bindValue(3, $section, PDO::PARAM_INT);
-            $ajouter_ouvrage->bindValue(4, $date_cotisation, PDO::PARAM_STR);
+            $ajouter_ouvrage->bindValue(4, $classe, PDO::PARAM_INT);
+            $ajouter_ouvrage->bindValue(5, $section, PDO::PARAM_INT);
+            $ajouter_ouvrage->bindValue(6, $date_cotisation, PDO::PARAM_STR);
             $ajouter_ouvrage->execute();    
         } 
 

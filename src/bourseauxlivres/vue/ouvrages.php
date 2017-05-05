@@ -5,7 +5,7 @@
 		</div>
 		<table class="table table-striped">
 			<thead>
-				<a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
+				<a href="<?php echo ADRESSE_ABSOLUE_URL . 'ajouter_ouvrage';?>" class="btn btn-primary btn-xs pull-right"><b>+</b>Ajouter un ouvrage</a>
 				<tr>
 					<th>ID</th>
 					<th>Title</th>
