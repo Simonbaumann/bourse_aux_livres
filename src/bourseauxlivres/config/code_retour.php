@@ -17,7 +17,7 @@
     $code_retour[7] = 'Connexion s\'est bien déroulée';
     $code_retour[8] = 'Mauvais identifiants !';
     $code_retour[9] = 'Merci de saisir vos identifiants';
-        
+    $code_retour[10] = 'Merci de saisir des mots de passe de longueur 4 minimum';
 
 
 ?>

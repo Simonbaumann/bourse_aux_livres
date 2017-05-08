@@ -1,5 +1,4 @@
 <?php
-    $_SESSION['id'] = 0;
 
     if(!isset($message_erreur)) $message_erreur = "Une erreur est survenue.";
 

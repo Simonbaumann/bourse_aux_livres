@@ -18,6 +18,10 @@
 	$m_session = new m_session($base_de_donnee);
 	$c_session = new c_session($m_session, $t_texte);
 	$m_utilisateur = new m_utilisateur($base_de_donnee);
+	
+	/**** VERIF SESSION ****/
+	$c_session->session();
+	if($_SESSION['id'] == -1) header('Location: connexion');
 
 	$nom_page = 'Ajouter un utilisateur';
 
@@ -32,23 +36,31 @@
 			$is_admin = false;
 		}
 
-		if($password1 == $password2) {
+		$taille1 = strlen($password1);
+		$taille2 = strlen($password2);
 
-			// Vérifie si email existe déjà
-			$compte = $m_utilisateur->is_compte_existant($email);
-			if($compte){
-				$codeRetour = 3;
-			}else{
-				$resultat = $m_utilisateur->creation_compte_utilisateur($email, $password1, $is_admin);
+		if($taille1 >= 4 && $taille2 >= 4){
+			if($password1 == $password2) {
 
-				if($resultat) {
-	
-					$codeRetour = 4;
+				// Vérifie si email existe déjà
+				$compte = $m_utilisateur->is_compte_existant($email);
+				if($compte){
+					$codeRetour = 3;
+				}else{
+					$resultat = $m_utilisateur->creation_compte_utilisateur($email, $password1, $is_admin);
+
+					if($resultat) {
+		
+						$codeRetour = 4;
+					}
 				}
+			}else {
+				// Mdp différent
+				$codeRetour = 2;
 			}
-		}else {
-			// Mdp différent
-			$codeRetour = 2;
+		}else{
+			// Mot de passe pas assez grand
+			$codeRetour = 10;
 		}
 	}else {
 		// Tout n'est pas renseigné

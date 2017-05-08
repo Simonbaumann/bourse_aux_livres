@@ -19,6 +19,10 @@
 	$c_session = new c_session($m_session, $t_texte);
 	$m_utilisateur = new m_utilisateur($base_de_donnee);
 
+	/**** VERIF SESSION ****/
+	$c_session->session();
+	if($_SESSION['id'] == -1) header('Location: connexion');
+	
 	$nom_page = 'Editer droit d\'un utilisateur';
 
 	/** Contrôle des paramètres */

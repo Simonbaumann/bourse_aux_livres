@@ -2,8 +2,13 @@
     <div class="row">
         <div class="page-header">
             <h1><?php echo $nom_page; ?></h1>
+            <?php 
+                if($codeRetour != -1) {
+                    echo $code_retour[$codeRetour]; 
+                }
+            ?>
         </div>
-        <form>
+        <form method="POST" action="">
             <div class="form-group">
                 <label for="nom">Nom</label>
                 <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">

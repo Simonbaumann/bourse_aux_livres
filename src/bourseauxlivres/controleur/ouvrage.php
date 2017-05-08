@@ -10,11 +10,17 @@
 
 	/**** MODELE ****/
 	require_once('modele/m_session.php');
+	require_once('modele/m_utilisateur.php');
 
 	/**** OBJETS ****/
 	$t_texte = new t_texte();
 	$f_formulaire = new f_formulaire();
 	$m_session = new m_session($base_de_donnee);
+	$m_utilisateur = new m_utilisateur($base_de_donnee);
 	$c_session = new c_session($m_session, $t_texte);
+	$c_utilisateur = new c_utilisateur($m_utilisateur);
 
+	/**** VERIF SESSION ****/
+	$c_session->session();
+	if($_SESSION['id'] == -1) header('Location: connexion');
 ?>

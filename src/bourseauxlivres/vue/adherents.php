@@ -5,32 +5,31 @@
 		</div>
 		<table class="table table-striped">
 			<thead>
-				<a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
+				<a href="<?php echo ADRESSE_ABSOLUE_URL . 'ajouter_adherent';?>" class="btn btn-primary btn-xs pull-right"><b>+</b>Ajouter un adhérent</a>
 				<tr>
 					<th>ID</th>
-					<th>Title</th>
-					<th>Parent ID</th>
+					<th>Nom Prénom</th>
+					<th>Adresse</th>
+					<th>Date de cotisation</th>
 					<th class="text-center">Action</th>
 				</tr>
 			</thead>
-			<tr>
-				<td>1</td>
-				<td>News</td>
-				<td>News Cate</td>
-				<td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>Products</td>
-				<td>Main Products</td>
-				<td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>Blogs</td>
-				<td>Parent Blogs</td>
-				<td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-			</tr>
+			<?php
+				foreach ($adherents as $adherent) {
+					echo '
+							<tr>
+								<td>' . $adherent->id . '</td>
+								<td>' . $adherent->nom . ' ' . $adherent->prenom . '</td>
+								<td>' . $adherent->adresse . ' ' . $adherent->ville . ' ' . $adherent->code_postal . '</td>
+								<td>' . $t_texte->quand($adherent->date_cotisation)  . '</td>
+								<td class="text-center">
+									<a class="btn btn-info btn-xs" href="'. ADRESSE_ABSOLUE_URL . 'adherent/' . $adherent->id .'"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+									<a href="'. ADRESSE_ABSOLUE_URL . 'supprimer_adherent/' . $adherent->id .'" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a>
+								</td>
+							</tr>
+					';
+				}
+			?>
 		</table>
     </div>
 </div> <!-- /container -->

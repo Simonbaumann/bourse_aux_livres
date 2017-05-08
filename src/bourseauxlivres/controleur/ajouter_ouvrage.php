@@ -18,12 +18,10 @@
 	$m_session = new m_session($base_de_donnee);
 	$c_session = new c_session($m_session, $t_texte);
 	$m_ouvrage = new m_ouvrage($base_de_donnee);
-
+	
 	/**** VERIF SESSION ****/
-	/*$c_session->session();
-
-	$m_accueil = new m_accueil($base_de_donnee);
-	$accueil = $m_accueil->get_accueil();*/
+	$c_session->session();
+	if($_SESSION['id'] == -1) header('Location: connexion');
 
 	$nom_page = 'Ajout d\'ouvrage';
 

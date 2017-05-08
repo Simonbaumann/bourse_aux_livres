@@ -20,6 +20,7 @@
 	$c_utilisateur = new c_utilisateur($m_utilisateur);
 
 	/**** VERIF SESSION ****/
+	$c_session->session();
     if($_SESSION['id'] == -1) header('Location: connexion');
     
 	$nom_page = 'Accueil';

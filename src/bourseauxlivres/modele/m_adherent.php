@@ -16,16 +16,18 @@
          * Ajout d'un adherent
          * Params : nom, prenom, adresse, ville, code postal
          */
-        public function ajouter_adherent($nom, $prenom, $adresse, $ville, $code_postal){
-            $ajouter_adherent = $this->base_de_donnee->prepare('INSERT INTO adherent (nom, prenom, adresse, ville, code_postal) 
-            values (?, ?, ?, ?, ?) ');
+        public function ajouter_adherent($nom, $prenom, $adresse, $ville, $code_postal, $date_cotisation){
+            $ajouter_adherent = $this->base_de_donnee->prepare('INSERT INTO adherent (nom, prenom, adresse, ville, code_postal, date_cotisation) 
+            values (?, ?, ?, ?, ?, ?) ');
 
             $ajouter_adherent->bindValue(1, $nom, PDO::PARAM_STR);
             $ajouter_adherent->bindValue(2, $prenom, PDO::PARAM_STR);
             $ajouter_adherent->bindValue(3, $adresse, PDO::PARAM_STR);
             $ajouter_adherent->bindValue(4, $ville, PDO::PARAM_STR);
             $ajouter_adherent->bindValue(5, $code_postal, PDO::PARAM_STR);
+            $ajouter_adherent->bindValue(6, $date_cotisation, PDO::PARAM_STR);
             $ajouter_adherent->execute();   
+            return $ajouter_adherent;
         } 
 
         /*
@@ -53,7 +55,7 @@
 
             $lister_adherents->execute();
             
-            $retour = $lister_adherents->fetch(PDO::FETCH_OBJ);
+            $retour = $lister_adherents->fetchAll(PDO::FETCH_OBJ);
             $lister_adherents->closeCursor();
                 
             return $retour;
@@ -83,6 +85,7 @@
             $delete_adherent = $this->base_de_donnee->prepare('DELETE FROM adherent WHERE id = ?');
             $delete_adherent->bindValue(1, $id, PDO::PARAM_INT);
             $delete_adherent->execute();
+            return $delete_adherent;
         }
     }
 ?>
