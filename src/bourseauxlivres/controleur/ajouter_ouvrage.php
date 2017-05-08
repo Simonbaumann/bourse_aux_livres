@@ -2,6 +2,9 @@
 	/**** SESSION ****/
 	session_start();
 
+	/**** DATA TIME SETTING ****/
+	date_default_timezone_set('Europe/Paris');
+
 	/**** CLASS CONTROLEUR ****/
 	require_once('class/c_session.php');
 	require_once('class/t_texte.php');
@@ -25,8 +28,8 @@
 
 	$nom_page = 'Ajout d\'ouvrage';
 
-	$code_retour = -1;
-	if(isset($_POST['nom']) && isset($_POST['editeur']) && isset($_POST['type']) && isset($_POST['classe'])) {
+	$codeRetour = -1;
+	if(!empty($_POST['nom']) && !empty($_POST['editeur']) && isset($_POST['type']) && isset($_POST['classe'])) {
 		$nom = $f_formulaire->testInputData($_POST['nom']);
 		$editeur = $f_formulaire->testInputData($_POST['editeur']);
 		$type = $f_formulaire->testInputData($_POST['type']);
@@ -35,15 +38,15 @@
 		if($_POST['classe'] == 'Seconde' && $_POST['section'] != 'Generale') {
 			$codeRetour = 5; // AMODIFIERRRRRRRRRRRRRRRRRRRR
 		} else {
-			$resultat = $m_ouvrage->ajouter_ouvrage($nom, $editeur, $type, $classe, $section, time());
+			$time = date("Y-m-d",time());
+			$resultat = $m_ouvrage->ajouter_ouvrage($nom, $type, $editeur, $classe, $section, $time);
 
 			if ($resultat) {
-				$codeRetour = 4;
+				$codeRetour = 4;  // Comprend pas pourquoi $resultat == FALSE si tout Ok ?!
 			}
 		}
-
 	} else {
 		// Tout n'est pas renseigné
-		$codeRetour = 2;
+		$codeRetour = 1;
 	}
 ?>

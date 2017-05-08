@@ -54,7 +54,7 @@
 
             $lister_ouvrages->execute();
             
-            $retour = $lister_ouvrages->fetch(PDO::FETCH_OBJ);
+            $retour = $lister_ouvrages->fetchAll(PDO::FETCH_OBJ);
             $lister_ouvrages->closeCursor();
                 
             return $retour;
@@ -82,9 +82,10 @@
          * Params : id
          */
         public function delete_ouvrage($isbn){
-            $delete_ouvrage = $this->base_de_donnee->prepare('DELETE FROM ouvrage WHERE id = ?');
+            $delete_ouvrage = $this->base_de_donnee->prepare('DELETE FROM ouvrage WHERE isbn = ?');
             $delete_ouvrage->bindValue(1, $isbn, PDO::PARAM_INT);
             $delete_ouvrage->execute();
+            return $delete_ouvrage;
         }
     }
 ?>

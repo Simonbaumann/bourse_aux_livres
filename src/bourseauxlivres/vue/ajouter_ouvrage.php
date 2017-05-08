@@ -2,8 +2,13 @@
     <div class="row">
         <div class="page-header">
             <h1><?php echo $nom_page; ?></h1>
+            <?php 
+                if($codeRetour != -1) {
+                    echo $code_retour[$codeRetour]; 
+                } else echo $codeRetour;
+            ?>
         </div>
-        <form>
+        <form method="POST" action="">
             <div class="form-group">
                 <label for="nom">Nom</label>
                 <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
@@ -22,7 +27,7 @@
                     <option value="5">Chimie</option>
                 </select>
             </div>
-            <div class="form-group" id="classe">
+            <div class="form-group" id="classe" name="classe">
                 <label for="editeur">Classe</label>
                 <select name="classe" class="form-control">
                     <option value="1">Seconde</option>
@@ -30,7 +35,7 @@
                     <option value="3">Terminale</option>
                 </select>
             </div>
-            <div class="form-group" id ="section">
+            <div class="form-group" id ="section" name="section">
                 <label for="editeur">Section</label>
                 <select name="section" class="form-control">
                     <option value="1">S</option>
@@ -44,10 +49,3 @@
         </form>
     </div>
 </div> <!-- /container -->
-
-<script type="text/javascript">
-    var classe = document.getElementById('classe');
-    if (classe.value == 'Seconde') {
-        alert('ok');
-    }
-</script>
