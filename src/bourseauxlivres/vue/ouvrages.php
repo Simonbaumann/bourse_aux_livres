@@ -24,7 +24,7 @@
 								<td>' . $ouvrage->isbn . '</td>
 								<td>' . $ouvrage->nom . '</td>
 								<td>' . $ouvrage->editeur . '</td>
-								<td>' . $ouvrage->type . '</td>
+								<td>' . $m_matiere->get_matiere($ouvrage->type)->libelle . '</td>
 								<td>' . $m_classe->get_classe($ouvrage->classe)->libelle . '</td>
 								<td>' . $m_section->get_section($ouvrage->section)->libelle . '</td>
 								<td>' . $t_texte->quand($ouvrage->date_cotisation) . '</td>

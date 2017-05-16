@@ -14,6 +14,7 @@
 	require_once('modele/m_ouvrage.php');
 	require_once('modele/m_classe.php');
 	require_once('modele/m_section.php');
+	require_once('modele/m_matiere.php');
 
 
 	/**** OBJETS ****/
@@ -24,6 +25,7 @@
 	$c_session = new c_session($m_session, $t_texte);
 	$m_classe = new m_classe($base_de_donnee);
 	$m_section = new m_section($base_de_donnee);
+	$m_matiere = new m_matiere($base_de_donnee);
 
 	/**** VERIF SESSION ****/
 	$c_session->session();

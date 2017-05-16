@@ -25,6 +25,8 @@
             $ajouter_manuel->bindValue(3, $prix, PDO::PARAM_STR);
             $ajouter_manuel->bindValue(4, $id_adherent_depot, PDO::PARAM_STR);
             $ajouter_manuel->execute();    
+
+            return $ajouter_manuel;
         } 
 
         /*

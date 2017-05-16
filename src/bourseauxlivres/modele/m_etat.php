@@ -50,7 +50,7 @@
 
             $lister_etats->execute();
             
-            $retour = $lister_etats->fetch(PDO::FETCH_OBJ);
+            $retour = $lister_etats->fetchAll(PDO::FETCH_OBJ);
             $lister_etats->closeCursor();
                 
             return $retour;
