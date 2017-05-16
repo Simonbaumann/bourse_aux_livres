@@ -132,7 +132,7 @@
 	}
 
 	// Ajout en base de données
-	if($nEtape == 4 && isset($_SESSION['depot_manuel_select']) && !empty($_SESSION['depot_manuel_select'])) {
+	if($nEtape == 4 && isset($_SESSION['depot_manuel_select']) && !empty($_SESSION['depot_manuel_select']) && isset($_SESSION['depot_adherent_select'])) {
 		$nom_page = 'Ajout en base de données';
 
 		foreach ($_SESSION['depot_manuel_select']['manuels'] as $key => $value) {
@@ -140,5 +140,8 @@
 			$prix = 0;
 			$resultat = $m_manuel->ajouter_manuel($value->isbn, $_SESSION['depot_manuel_select']['etats_manuels'][$key], $prix, $_SESSION['depot_adherent_select']->id);
 		}
+
+		unset($_SESSION['depot_manuel_select']);
+		unset($_SESSION['depot_adherent_select']);
 	}	
 ?>

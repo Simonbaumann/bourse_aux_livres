@@ -94,25 +94,26 @@ if($nEtape != 4) {
                                 </tr>
                             </thead>
                             <?php
-                   
-                                foreach ($_SESSION['depot_manuel_select']['manuels'] as $key => $value) {
-                                    echo '
-                                            <tr>
-                                                <td>' . $value->isbn . '</td>
-                                                <td>' . $value->nom . '</td>
-                                                <td>' . $value->editeur . '</td>
-                                                <td>' . $m_matiere->get_matiere($value->type)->libelle . '</td>
-                                                <td>' . $m_classe->get_classe($value->classe)->libelle . '</td>
-                                                <td>' . $m_section->get_section($value->section)->libelle . '</td>
-                                                <td>' . $m_etat->get_etat($_SESSION['depot_manuel_select']['etats_manuels'][$key])->intitule . '</td>
-                                                <td class="text-center">
-                                                    <form method="POST" action="">
-                                                        <input type="hidden" name="supprimerElementPanier"  value="'. $value->isbn .'">
-                                                        <input type="submit" class="btn btn-danger btn-xs" value="Retirer">
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                    ';
+                                if(isset($_SESSION['depot_manuel_select']['manuels'])){
+                                    foreach ($_SESSION['depot_manuel_select']['manuels'] as $key => $value) {
+                                        echo '
+                                                <tr>
+                                                    <td>' . $value->isbn . '</td>
+                                                    <td>' . $value->nom . '</td>
+                                                    <td>' . $value->editeur . '</td>
+                                                    <td>' . $m_matiere->get_matiere($value->type)->libelle . '</td>
+                                                    <td>' . $m_classe->get_classe($value->classe)->libelle . '</td>
+                                                    <td>' . $m_section->get_section($value->section)->libelle . '</td>
+                                                    <td>' . $m_etat->get_etat($_SESSION['depot_manuel_select']['etats_manuels'][$key])->intitule . '</td>
+                                                    <td class="text-center">
+                                                        <form method="POST" action="">
+                                                            <input type="hidden" name="supprimerElementPanier"  value="'. $value->isbn .'">
+                                                            <input type="submit" class="btn btn-danger btn-xs" value="Retirer">
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                        ';
+                                    }
                                 }
                             ?>
                         </table>
