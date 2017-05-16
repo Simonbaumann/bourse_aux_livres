@@ -68,9 +68,8 @@
 		include('vue/header.php');
 		include('vue/'.$page.'.php');
 		include('vue/footer.php');
-    }else if(file_exists('controleur/'.$page.'.php') && file_exists('vue/'.$page.'.php') && in_array($page, $web_services_existants)){
-    	include('controleur/'.$page.'.php');
-    	include('vue/'.$page.'.php');
+    }else if(file_exists('webservices/'.$page.'.php') && in_array($page, $web_services_existants)){
+    	include('webservices/'.$page.'.php');
     }else{
     	/**** Appel du controleur et des vues ****/
 		include('controleur/erreur.php');

@@ -287,6 +287,11 @@ ALTER TABLE `vente`
   ADD CONSTRAINT `vente_ibfk_1` FOREIGN KEY (`id_manuel`) REFERENCES `manuel` (`id`),
   ADD CONSTRAINT `vente_ibfk_2` FOREIGN KEY (`id_adherent_acheteur`) REFERENCES `adherent` (`id`);
 
+--
+-- Table ouvrage défini l'auto increment a 10001;
+--
+ALTER TABLE ouvrage AUTO_INCREMENT=1001;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

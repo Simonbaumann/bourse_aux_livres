@@ -49,7 +49,7 @@
 
             $lister_classes->execute();
             
-            $retour = $lister_classes->fetch(PDO::FETCH_OBJ);
+            $retour = $lister_classes->fetchAll(PDO::FETCH_OBJ);
             $lister_classes->closeCursor();
                 
             return $retour;

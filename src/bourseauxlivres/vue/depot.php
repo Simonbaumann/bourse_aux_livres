@@ -11,21 +11,28 @@
         <div class="stepwizard">
             <div class="stepwizard-row setup-panel">
                 <div class="stepwizard-step">
-                    <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                    <a href="#step-1" type="button" class="btn <?php if($nEtape == 1){echo 'btn-primary';}else{echo 'btn-default';} ?>  btn-circle">1</a>
                     <p>Recherche adhérents</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                    <a href="#step-2" type="button" class="btn <?php if($nEtape == 2){echo 'btn-primary';}else{echo 'btn-default';} ?> btn-circle">2</a>
                     <p>Sélection d'ouvrages</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <a href="#step-3" type="button" class="btn <?php if($nEtape == 3){echo 'btn-primary';}else{echo 'btn-default';} ?> btn-circle">3</a>
+                    <p>Attribution états des ouvrages</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-4" type="button" class="btn <?php if($nEtape == 4){echo 'btn-primary';}else{echo 'btn-default';} ?> btn-circle">4</a>
                     <p>Finalisation</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
+        <?php 
+            if($nEtape == 1){
+        ?>
         <form role="form">
             <div class="row setup-content" id="step-1">
                 <div class="col-xs-12">
@@ -40,6 +47,11 @@
                     </div>
                 </div>
             </div>
+        </form>
+        <?php
+            }
+            if($nEtape == 2){
+        ?>
             <div class="row setup-content" id="step-2">
                 <div class="col-xs-12">
                     <div class="col-md-12">
@@ -53,6 +65,10 @@
                     </div>
                 </div>
             </div>
+        <?php
+            }
+            if($nEtape == 4){
+        ?>
             <div class="row setup-content" id="step-3">
                 <div class="col-xs-12">
                     <div class="col-md-12">
@@ -61,8 +77,10 @@
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
+        <?php
+            }
+        ?>
+    </div> <!-- /row -->
     <hr>
     <!-- Recherche adhérents ou ouvrages -->
     <div class="row">

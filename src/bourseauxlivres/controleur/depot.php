@@ -21,7 +21,18 @@
 	/**** VERIF SESSION ****/
 	$c_session->session();
 	if($_SESSION['id'] == -1) header('Location: connexion');
-
-
+	
+	$codeRetour = -1;
 	$nom_page = 'Dépôts de livres';
+
+	/** Contrôle des paramètres */
+	if(!empty($url_param[0])) {
+		if(preg_match('#^[0-9]{1,}$#', $url_param[0])) {
+			$nEtape = $url_param[0];
+		} else { $nEtape = 1; }
+	} else { $nEtape = 1; }
+
+
+	
+
 ?>

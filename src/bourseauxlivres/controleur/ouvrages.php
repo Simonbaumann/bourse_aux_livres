@@ -12,6 +12,8 @@
 	require_once('modele/m_session.php');
 	require_once('modele/m_utilisateur.php');
 	require_once('modele/m_ouvrage.php');
+	require_once('modele/m_classe.php');
+	require_once('modele/m_section.php');
 
 
 	/**** OBJETS ****/
@@ -20,7 +22,9 @@
 	$m_session = new m_session($base_de_donnee);
 	$m_ouvrage = new m_ouvrage($base_de_donnee);
 	$c_session = new c_session($m_session, $t_texte);
-	
+	$m_classe = new m_classe($base_de_donnee);
+	$m_section = new m_section($base_de_donnee);
+
 	/**** VERIF SESSION ****/
 	$c_session->session();
 	if($_SESSION['id'] == -1) header('Location: connexion');

@@ -25,11 +25,10 @@
 								<td>' . $ouvrage->nom . '</td>
 								<td>' . $ouvrage->editeur . '</td>
 								<td>' . $ouvrage->type . '</td>
-								<td>' . $ouvrage->classe . '</td>
-								<td>' . $ouvrage->section . '</td>
-								<td>' . $ouvrage->date_cotisation . '</td>
+								<td>' . $m_classe->get_classe($ouvrage->classe)->libelle . '</td>
+								<td>' . $m_section->get_section($ouvrage->section)->libelle . '</td>
+								<td>' . $t_texte->quand($ouvrage->date_cotisation) . '</td>
 								<td class="text-center">
-									<a class="btn btn-info btn-xs" href="'. ADRESSE_ABSOLUE_URL . 'ouvrage/' . $ouvrage->isbn .'"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
 									<a href="'. ADRESSE_ABSOLUE_URL . 'supprimer_ouvrage/' . $ouvrage->isbn .'" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a>
 								</td>
 							</tr>

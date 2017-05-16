@@ -27,6 +27,8 @@
             $ajouter_ouvrage->bindValue(5, $section, PDO::PARAM_INT);
             $ajouter_ouvrage->bindValue(6, $date_cotisation, PDO::PARAM_STR);
             $ajouter_ouvrage->execute();    
+
+            return $ajouter_ouvrage;
         } 
 
         /*
@@ -86,6 +88,53 @@
             $delete_ouvrage->bindValue(1, $isbn, PDO::PARAM_INT);
             $delete_ouvrage->execute();
             return $delete_ouvrage;
+        }
+
+        /*
+            Permet de rechercher des ouvrages
+        */
+        public function rechercher_ouvrages($recherche){
+            
+            //permet de stocker le résultat dans un tableau, on supprime les espaces
+            $s = explode(" ", $recherche);
+            // On stocke notre requête dans une variable qu'on pourra modifier en fonction des résultats
+            $sqlAND = "SELECT * FROM ouvrage";
+            $sqlOR = "SELECT * FROM ouvrage";
+            $i=0; // indice
+
+            // On va parcourir le tableau $s
+            foreach($s as $mots){
+                // pour éviter injection sql
+                $mots = addslashes($mots); 
+
+                if(strlen($mots)>3){ // pour éviter les petits mots comme le de etc... 
+                    if($i==0){
+                        $sqlAND.= " WHERE ";
+                        $sqlOR.= " WHERE ";
+                    }
+                    else{
+                        $sqlAND.= " AND ";
+                        $sqlOR.= " OR ";
+                    }
+                    // On met en place enfin la requête sql
+                    $sqlAND.="nom like '%$mots%' AND editeur like '%$mots%'";
+                    $sqlOR.="nom like '%$mots%' OR editeur like '%$mots%'";
+                    // On incrémente l'indice
+                    $i++;
+                }
+
+                // UNION des 2 requêtes AND et OR
+                $sql = $sqlAND ." UNION ".$sqlOR;
+
+                // Traitement requête
+                $rechercher_ouvrages = $this->base_de_donnee->prepare($sql);
+                $rechercher_ouvrages->execute();
+
+                $retour = $rechercher_ouvrages->fetchAll(PDO::FETCH_OBJ);
+                $rechercher_ouvrages->closeCursor();
+                    
+                return $retour;
+            }
         }
     }
 ?>

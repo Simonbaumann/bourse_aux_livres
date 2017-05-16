@@ -87,5 +87,52 @@
             $delete_adherent->execute();
             return $delete_adherent;
         }
+
+        /*
+            Permet de rechercher des adhérents
+        */
+        public function rechercher_adherents($recherche){
+            
+            //permet de stocker le résultat dans un tableau, on supprime les espaces
+            $s = explode(" ", $recherche);
+            // On stocke notre requête dans une variable qu'on pourra modifier en fonction des résultats
+            $sqlAND = "SELECT * FROM adherent";
+            $sqlOR = "SELECT * FROM adherent";
+            $i=0; // indice
+
+            // On va parcourir le tableau $s
+            foreach($s as $mots){
+                // pour éviter injection sql
+                $mots = addslashes($mots); 
+
+                if(strlen($mots)>3){ // pour éviter les petits mots comme le de etc... 
+                    if($i==0){
+                        $sqlAND.= " WHERE ";
+                        $sqlOR.= " WHERE ";
+                    }
+                    else{
+                        $sqlAND.= " AND ";
+                        $sqlOR.= " OR ";
+                    }
+                    // On met en place enfin la requête sql
+                    $sqlAND.="nom like '%$mots%' AND prenom like '%$mots%'";
+                    $sqlOR.="nom like '%$mots%' OR prenom like '%$mots%'";
+                    // On incrémente l'indice
+                    $i++;
+                }
+
+                // UNION des 2 requêtes AND et OR
+                $sql = $sqlAND ." UNION ".$sqlOR;
+
+                // Traitement requête
+                $rechercher_adherents = $this->base_de_donnee->prepare($sql);
+                $rechercher_adherents->execute();
+
+                $retour = $rechercher_adherents->fetchAll(PDO::FETCH_OBJ);
+                $rechercher_adherents->closeCursor();
+                    
+                return $retour;
+            }
+        }
     }
 ?>

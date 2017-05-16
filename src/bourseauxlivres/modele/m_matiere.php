@@ -49,7 +49,7 @@
 
             $lister_matieres->execute();
             
-            $retour = $lister_matieres->fetch(PDO::FETCH_OBJ);
+            $retour = $lister_matieres->fetchAll(PDO::FETCH_OBJ);
             $lister_matieres->closeCursor();
                 
             return $retour;

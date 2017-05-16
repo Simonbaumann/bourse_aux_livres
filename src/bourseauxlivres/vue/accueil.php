@@ -1,15 +1,42 @@
 <div class="container">
     <div class="row">
-    	<div class="page-header">
+		<div class="jumbotron">
+	        <h1>Association des Parents d’Elèves de Rodez-Onet</h1>
+	        <p class="lead">Système informatique pour l’association APERO (Association des Parents d’Elèves de Rodez-Onet) permettant aux familles d’assurer le dépôt et la vente de manuels scolaire de l’année écoulée.</p>
+        </div>
+		<div class="page-header">
 		    <h1><?php echo $nom_page; ?></h1>
 		</div>
-		<p>
-			TODO <br >
-		Quare talis improborum consensio non modo excusatione amicitiae tegenda non est sed potius supplicio omni vindicanda est, ut ne quis concessum putet amicum vel bellum patriae inferentem sequi; quod quidem, ut res ire coepit, haud scio an aliquando futurum sit. Mihi autem non minori curae est, qualis res publica post mortem meam futura, quam qualis hodie sit.
 
-		Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed sibi vicissim velut ad perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis exaedificavit Herodes, et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo superiore exstructas.
+		<div class="col-xs-6">
+			<h3>Période fin mai à début-juin</h3>
+				<li>Liste des établissements scolaires</li>
+				<li>Enregistrer la liste officielle des ouvrages</li>
+				<li>Saisir du prix des ouvrages neufs</li>
+		</div>
+		<div class="col-xs-6">
+			<h3>Période fin septembre</h3>
+				<li>Calcul des paiements à effectuer et impression d’une lettre chèque automatique</li>
+				<li>Lister les vendeurs pour obtenir information car doit envoyer lettre chèque
+				Période tout le mois d’octobre</li>
+				<li>Retrait des manuels invendus (lister les manuels non vendus)</li>
+		</div>
 
-		Et Epigonus quidem amictu tenus philosophus, ut apparuit, prece frustra temptata, sulcatis lateribus mortisque metu admoto turpi confessione cogitatorum socium, quae nulla erant, fuisse firmavit cum nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero obiecta fidentius negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse, non iudicium clamans.
-		</p>
+		<div class="col-xs-6">
+			<h3>Période mi-juin à mi-juillet <em>(dépôt des manuels)</em></h3>
+				<li>Inscription des adhérents de l’association (payer 10 € retenu sur la vente)</li>
+				<li>Réception et expertise des manuels</li>
+				<li>Attribution d’une décote (seulement manuel en usage l’année prochaine)</li>
+				<li>Enregistrement des manuels réceptionnés en BDD (numéro étiquette adhésive, calcul de son prix à partir des ouvrages neuf en appliquant la décote)</li>
+				<li>Fiche récapitulative doit être fourni (imprimé pour le déposant)</li>
+		</div>
+		<div class="col-xs-6">
+			<h3>Période de mi-juillet à fin-juillet de fin-août à mi-septembre</h3>
+				<li>Vente des livres (Bénévole s’assure qu’il s’agit bien d’un adhérent, paiement par chèque)</li>
+				<li>Réserver aux adhérents (doivent payer 5€)</li>
+				<li>Si stock non épuisé avant rentré des classes alors vente ouverte aux non adhérents</li>
+				<li>Inscription de l’acheteur sur le SI</li>
+				<li>Etablissement d’une facture avec remise des manuels</li>
+		</div>
     </div>
 </div> <!-- /container -->
