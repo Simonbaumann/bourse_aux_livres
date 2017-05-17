@@ -224,6 +224,10 @@ if($nEtape != 4) {
             <div class="col-xs-6 col-md-4">
                 <div class="page-header">
                     <h1>Panier</h1>
+                    <form method="POST" action="" class="form-inline">
+                        <input type="hidden" name="viderPanier">
+                        <input type="submit" class="btn btn-danger btn-xs" value="Vider Panier">
+                    </form>
                 </div>
                 <div class="list-group">
                     <a href="#" class="list-group-item active">

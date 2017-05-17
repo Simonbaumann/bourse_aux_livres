@@ -140,4 +140,12 @@
 		unset($_SESSION['depot_manuel_select']);
 		unset($_SESSION['depot_adherent_select']);
 	}	
+
+
+	// Vider le panier
+	if(isset($_POST['viderPanier'])) {
+		unset($_SESSION['depot_manuel_select']);
+		unset($_SESSION['depot_adherent_select']);	
+		header('Location: ' .ADRESSE_ABSOLUE_URL. 'depot/1');
+	}
 ?>

@@ -54,7 +54,7 @@
 
             $lister_manuels->execute();
             
-            $retour = $lister_manuels->fetch(PDO::FETCH_OBJ);
+            $retour = $lister_manuels->fetchAll(PDO::FETCH_OBJ);
             $lister_manuels->closeCursor();
                 
             return $retour;
