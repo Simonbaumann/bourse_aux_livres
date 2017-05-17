@@ -69,10 +69,10 @@ INSERT INTO `ouvrage` (`isbn`, `nom`, `type`, `editeur`, `classe`, `section`, `d
 
 (98700, 'English', '5', 'Improve', '3', '1' , '1494242125'),
 (02103, 'PhysicPlus', '7', 'Hardue', '3', '2' , '1494242125'),
-(99855, 'La terre', '9', 'Parceque', '3', '3', '1494242125');
+(99855, 'La terre', '9', 'Parceque', '3', '3', '1494242125'),
 (97663, 'Philo', '10', 'Pourquoi', '3', '4', '1494242125'),
 (99852, 'EcoEco', '11', 'PicSous', '3', '5' , '1494242125'),
-(35746, 'English', '5', 'Improve', '3', '6' , '1494242125'),
+(35746, 'English', '5', 'Improve', '3', '6' , '1494242125');
 
 
 --

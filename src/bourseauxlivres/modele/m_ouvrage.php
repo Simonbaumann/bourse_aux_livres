@@ -16,16 +16,17 @@
          * Ajout d'un ouvrage 
          * Params : $nom, $type, $editeur, $classe, $section, $date_cotisation
          */
-        public function ajouter_ouvrage($nom, $type, $editeur, $classe, $section, $date_cotisation){
-            $ajouter_ouvrage = $this->base_de_donnee->prepare('INSERT INTO ouvrage (nom, type, editeur, classe, section, date_cotisation) 
-            values (?, ?, ?, ?, ?, ?)');
+        public function ajouter_ouvrage($nom, $type, $editeur, $classe, $section, $prix_neuf, $date_cotisation){
+            $ajouter_ouvrage = $this->base_de_donnee->prepare('INSERT INTO ouvrage (nom, type, editeur, classe, section, prix_neuf, date_cotisation) 
+            values (?, ?, ?, ?, ?, ?, ?)');
 
             $ajouter_ouvrage->bindValue(1, $nom, PDO::PARAM_STR);
             $ajouter_ouvrage->bindValue(2, $type, PDO::PARAM_STR);
             $ajouter_ouvrage->bindValue(3, $editeur, PDO::PARAM_STR);
             $ajouter_ouvrage->bindValue(4, $classe, PDO::PARAM_INT);
             $ajouter_ouvrage->bindValue(5, $section, PDO::PARAM_INT);
-            $ajouter_ouvrage->bindValue(6, $date_cotisation, PDO::PARAM_STR);
+            $ajouter_ouvrage->bindValue(6, $prix_neuf, PDO::PARAM_STR);
+            $ajouter_ouvrage->bindValue(7, $date_cotisation, PDO::PARAM_STR);
             $ajouter_ouvrage->execute();    
 
             return $ajouter_ouvrage;
@@ -66,16 +67,17 @@
          * Mise à jour d'un ouvrage
          * Params : $isbn, $nom, $type, $editeur, $classe, $section, $date_cotisation
          */
-        public function update_ouvrage($isbn, $nom, $type, $editeur, $classe, $section, $date_cotisation){
-            $update_ouvrage = $this->base_de_donnee->prepare('UPDATE ouvrage SET  nom = ?, type = ?, editeur = ?, classe = ?, section = ?, date_cotisation = ? WHERE isbn = ?');
+        public function update_ouvrage($isbn, $nom, $type, $editeur, $classe, $section, $prix_neuf, $date_cotisation){
+            $update_ouvrage = $this->base_de_donnee->prepare('UPDATE ouvrage SET  nom = ?, type = ?, editeur = ?, classe = ?, section = ?, prix_neuf = ?, date_cotisation = ? WHERE isbn = ?');
             
             $update_ouvrage->bindValue(1, $nom, PDO::PARAM_STR);
             $update_ouvrage->bindValue(2, $type, PDO::PARAM_STR);
             $update_ouvrage->bindValue(3, $editeur, PDO::PARAM_STR);
             $update_ouvrage->bindValue(4, $classe, PDO::PARAM_INT);
             $update_ouvrage->bindValue(5, $section, PDO::PARAM_INT);
-            $update_ouvrage->bindValue(6, $date_cotisation, PDO::PARAM_STR);
-            $update_ouvrage->bindValue(7, $isbn, PDO::PARAM_INT);
+            $update_ouvrage->bindValue(6, $prix_neuf, PDO::PARAM_STR);
+            $update_ouvrage->bindValue(7, $date_cotisation, PDO::PARAM_STR);
+            $update_ouvrage->bindValue(8, $isbn, PDO::PARAM_INT);
             $update_ouvrage->execute();
         } 
 

@@ -106,8 +106,7 @@
 		}else{
 			$ajout = true;
 		}
-		var_dump($array_ouvrage_etat);
-		var_dump($array);
+
 		if($ajout){
 			array_push($array_ouvrage_etat, $idEtat);
 			array_push($array, $ouvrage);
@@ -127,8 +126,6 @@
 				unset($_SESSION['depot_manuel_select']['etats_manuels'][$key]);
 			}
 		}
-		var_dump($_SESSION['depot_manuel_select']['manuels']);
-		var_dump($_SESSION['depot_manuel_select']['etats_manuels']);
 	}
 
 	// Ajout en base de données
@@ -136,8 +133,7 @@
 		$nom_page = 'Ajout en base de données';
 
 		foreach ($_SESSION['depot_manuel_select']['manuels'] as $key => $value) {
-			//$prix = $value->prix * $m_etat->get_etat($_SESSION['depot_manuel_select']['etats_manuels'][$key])->decote;
-			$prix = 0;
+			$prix = (double) ($value->prix_neuf * $m_etat->get_etat($_SESSION['depot_manuel_select']['etats_manuels'][$key])->decote);
 			$resultat = $m_manuel->ajouter_manuel($value->isbn, $_SESSION['depot_manuel_select']['etats_manuels'][$key], $prix, $_SESSION['depot_adherent_select']->id);
 		}
 

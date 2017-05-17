@@ -36,17 +36,18 @@
 	$matieres = $m_matiere->lister_matieres();
 
 	$codeRetour = -1;
-	if(!empty($_POST['nom']) && !empty($_POST['editeur']) && isset($_POST['type']) && isset($_POST['classe'])) {
+	if(!empty($_POST['nom']) && !empty($_POST['editeur']) && isset($_POST['type']) && isset($_POST['classe']) && isset($_POST['prix_neuf'])) {
 		$nom = $f_formulaire->testInputData($_POST['nom']);
 		$editeur = $f_formulaire->testInputData($_POST['editeur']);
 		$type = $f_formulaire->testInputData($_POST['type']);
 		$classe = $f_formulaire->testInputData($_POST['classe']);
+		$prix_neuf = (double) $_POST['prix_neuf'];
 
 		if($_POST['classe'] == 'Seconde' && $_POST['section'] != 'Generale') {
 			$codeRetour = 5; // AMODIFIERRRRRRRRRRRRRRRRRRRR
 		} else {
 			$time = time();
-			$resultat = $m_ouvrage->ajouter_ouvrage($nom, $type, $editeur, $classe, $section, $time);
+			$resultat = $m_ouvrage->ajouter_ouvrage($nom, $type, $editeur, $classe, $section, $prix_neuf, $time);
 
 			if ($resultat) {
 				$codeRetour = 4;  // Comprend pas pourquoi $resultat == FALSE si tout Ok ?!

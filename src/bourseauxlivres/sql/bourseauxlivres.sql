@@ -104,7 +104,6 @@ CREATE TABLE `matiere` (
 --
 -- Structure de la table `ouvrage`
 --
-
 CREATE TABLE `ouvrage` (
   `isbn` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
@@ -112,9 +111,9 @@ CREATE TABLE `ouvrage` (
   `editeur` varchar(255) NOT NULL,
   `classe` int(11) NOT NULL,
   `section` int(11) NOT NULL,
+  `prix_neuf` double NOT NULL,
   `date_cotisation` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 -- --------------------------------------------------------
 
 --

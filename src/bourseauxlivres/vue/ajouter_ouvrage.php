@@ -47,6 +47,10 @@
                    
                 </select>
             </div>
+            <div class="form-group">
+                 <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="prix_neuf" name="prix_neuf" placeholder="Prix">
+            </div>
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
     </div>
