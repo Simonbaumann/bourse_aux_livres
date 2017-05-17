@@ -18,7 +18,7 @@
 							<tr>
 								<td>' . $m_ouvrage->get_ouvrage($manuel->id_ouvrage)->isbn . ' ' . $m_ouvrage->get_ouvrage($manuel->id_ouvrage)->nom . ' ' . $m_ouvrage->get_ouvrage($manuel->id_ouvrage)->editeur . '</td>
 								<td>' . $m_etat->get_etat($manuel->id_etat)->intitule . '</td>
-								<td>' . $manuel->prix . '</td>
+								<td>' . $manuel->prix . ' €</td>
 								<td>' . $m_adherent->get_adherent($manuel->id_adherent_depot)->nom .' ' . $m_adherent->get_adherent($manuel->id_adherent_depot)->prenom . '</td>
 							</tr>
 					';

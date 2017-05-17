@@ -52,27 +52,30 @@ INSERT INTO `matiere` (`id`, `libelle`) VALUES
 --
 -- Contenu de la table `ouvrage`
 --
-INSERT INTO `ouvrage` (`isbn`, `nom`, `type`, `editeur`, `classe`, `section`, `date_cotisation`) VALUES
-(45628, 'Français', '1', 'French', '1', '1', '1494242125'),
-(85421, 'HistEnBar', '3', 'Jaquelin', '1', '1', '1494242125'),
-(85411, 'GeoPlus', '4', 'Galimar', '1', '1', '1494242125'),
-(85462, 'Leanr English', '5', 'Zaion', '1', '1', '1494242125'),
-(03570, 'Mathrodur', '8', 'CasseTete', '1', '1', '1494242125'),
-
-(31872, 'Mathrodur', '8', 'CasseTete', '2', '1', '1494242125'),
-(14785, 'HexaMaths', '8', 'Galimar', '2', '2', '1494242125'),
-(24583, 'TopChimie', '2', 'Edichim', '2', '3', '1494242125'),
-(85743, 'Espanish', '6', 'Improve', '2', '4' , '1494242125'),
-(55410, 'EcoPlus', '11', 'Galimar', '2', '5', '1494242125'),
-(35415, 'GéoPlus', '4', 'LeMonde', '2', '6' , '1494242125'),
-(04685, 'PhysicPlus', '7', 'Sciences', '2', '6' , '1494242125'),
-
-(98700, 'English', '5', 'Improve', '3', '1' , '1494242125'),
-(02103, 'PhysicPlus', '7', 'Hardue', '3', '2' , '1494242125'),
-(99855, 'La terre', '9', 'Parceque', '3', '3', '1494242125'),
-(97663, 'Philo', '10', 'Pourquoi', '3', '4', '1494242125'),
-(99852, 'EcoEco', '11', 'PicSous', '3', '5' , '1494242125'),
-(35746, 'English', '5', 'Improve', '3', '6' , '1494242125');
+INSERT INTO `ouvrage` (`isbn`, `nom`, `type`, `editeur`, `classe`, `section`, `prix_neuf`, `date_cotisation`) VALUES
+(1002, 'Mathématiques', '1', 'Nathan', 1, 1, 24.95, '1494947053'),
+(1003, 'Mathématiques', '1', 'Nathan', 1, 1, 15.63, '1494947080'),
+(1004, 'Mathématiques', '1', 'Nathan', 1, 1, 41, '1494947118'),
+(2103, 'PhysicPlus', '7', 'Hardue', 3, 2, 23.2, '1494242125'),
+(3570, 'Mathrodur', '8', 'CasseTete', 1, 1, 10.12, '1494242125'),
+(4685, 'PhysicPlus', '7', 'Sciences', 2, 6, 41.3, '1494242125'),
+(14785, 'HexaMaths', '8', 'Galimar', 2, 2, 5.36, '1494242125'),
+(24583, 'TopChimie', '2', 'Edichim', 2, 3, 6.96, '1494242125'),
+(31872, 'Mathrodur', '8', 'CasseTete', 2, 1, 7.85, '1494242125'),
+(35415, 'GéoPlus', '4', 'LeMonde', 2, 6, 6.23, '1494242125'),
+(35746, 'English', '5', 'Improve', 3, 6, 14.36, '1494242125'),
+(45628, 'Français', '1', 'French', 1, 1, 25.36, '1494242125'),
+(55410, 'EcoPlus', '11', 'Galimar', 2, 5, 14.25, '1494242125'),
+(85411, 'GeoPlus', '4', 'Galimar', 1, 1, 25.5, '1494242125'),
+(85421, 'HistEnBar', '3', 'Jaquelin', 1, 1, 30.2, '1494242125'),
+(85462, 'Leanr English', '5', 'Zaion', 1, 1, 14.78, '1494242125'),
+(85743, 'Espanish', '6', 'Improve', 2, 4, 24.3, '1494242125'),
+(97663, 'Philo', '10', 'Pourquoi', 3, 4, 6.36, '1494242125'),
+(98700, 'English', '5', 'Improve', 3, 1, 7.25, '1494242125'),
+(99852, 'EcoEco', '11', 'PicSous', 3, 5, 8.65, '1494242125'),
+(99855, 'La terre', '9', 'Parceque', 3, 3, 32.56, '1494242125'),
+(99856, 'Mathématiques', '8', 'Nathan', 2, 3, 32.56, '1494951584'),
+(99857, 'azeaze', '1', 'Nathan', 1, 1, 32.56, '1494951624');
 
 
 --
@@ -105,3 +108,11 @@ INSERT INTO `etat` (`id`, `intitule`, `decote`) VALUES
 (2, 'B', '0.40'),
 (3, 'AB', '0.50'),
 (4, 'E', '0.65');
+
+--
+-- Contenu de la table `manuel`
+--
+
+INSERT INTO `manuel` (`id`, `id_ouvrage`, `id_etat`, `prix`, `id_adherent_depot`) VALUES
+(14, 1002, 3, 12.475, 2),
+(15, 97663, 3, 3.18, 2);
