@@ -20,7 +20,6 @@
 	/**** VERIF SESSION ****/
 	$c_session->session();
 	if($_SESSION['id'] == -1) header('Location: connexion');
-	if($_SESSION['is_admin'] != 1) header('Location: '. ADRESSE_ABSOLUE_URL . 'accueil');
 
 	/**** TRAITEMENTS ****/
 	$nom_page = 'Information adhérent';
